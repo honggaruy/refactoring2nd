@@ -39,7 +39,7 @@ export class Province {
     }
 }
 
-export class Producer {
+class Producer {
     constructor(aProvince, data) {
         this._province = aProvince
         this._cost = data.cost
