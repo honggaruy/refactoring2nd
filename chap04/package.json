@@ -10,6 +10,10 @@
   "scripts": {
     "test": "node ../node_modules/mocha/bin/mocha"
   },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
