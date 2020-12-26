@@ -12,4 +12,9 @@ describe('province', function() {
     it('profit', function() {
         chai.expect(asia.profit).equal(230)
     })
+    it('change production', function() {
+        asia.producers[0].production = 20
+        chai.expect(asia.shortfall).equal(-6)
+        chai.expect(asia.profit).equal(330)
+    })
 })
