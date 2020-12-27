@@ -1,10 +1,19 @@
 {
-  "name": "statement",
+  "name": "chap01",
   "version": "1.0.0",
   "description": "",
   "main": "statement.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "main": "node ./src/statement.js",
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "keywords": [],
   "author": "",

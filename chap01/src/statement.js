@@ -1,4 +1,4 @@
-function statement(invoice, plays) {
+export function statement(invoice, plays) {
     let totalAmount = 0;
     let volumeCredits = 0;
     let result = `청구 내역 (고객명: ${invoice.customer})\n`
@@ -42,9 +42,10 @@ function statement(invoice, plays) {
     return result
 }
 
-const fs = require('fs')
-const plays = JSON.parse(fs.readFileSync('plays.json').toString())
-const invoices = JSON.parse(fs.readFileSync('invoices.json').toString())
+import fs from 'fs'
+
+const plays = JSON.parse(fs.readFileSync('./src/plays.json').toString())
+const invoices = JSON.parse(fs.readFileSync('./src/invoices.json').toString())
 
 for (let invoice of invoices)
     console.log(statement(invoice, plays))
