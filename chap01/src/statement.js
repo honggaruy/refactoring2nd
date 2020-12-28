@@ -7,7 +7,7 @@ export function statement(invoice, plays) {
                             minimumFractionDigits: 2}).format
 
     for (let perf of invoice.performances) {
-        const play = plays[perf.playID]
+        const play = playFor(perf)
 
         let thisAmount = amountFor(perf, play);
 
@@ -23,6 +23,10 @@ export function statement(invoice, plays) {
     result += `총액: ${format(totalAmount/100)}\n`
     result += `적립 포인트: ${volumeCredits}점\n`
     return result
+
+    function playFor(aPerformance) {
+        return plays[aPerformance.playID];
+    }
 
     function amountFor(aPerformance, play) {
         let result = 0;
