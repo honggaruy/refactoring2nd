@@ -7,7 +7,6 @@ export function statement(invoice, plays) {
                             minimumFractionDigits: 2}).format
 
     for (let perf of invoice.performances) {
-        // 포인트를적립한다
         volumeCredits += volumeCreditsFor(perf);
 
         // 청구내역을 출력한다
@@ -19,11 +18,11 @@ export function statement(invoice, plays) {
     return result
 
     function volumeCreditsFor(perf) {
-        let volumeCredits = 0
-        volumeCredits += Math.max(perf.audience - 30, 0);
+        let result = 0
+        result += Math.max(perf.audience - 30, 0);
         if ("comedy" === playFor(perf).type)
-            volumeCredits += Math.floor(perf.audience / 5);
-        return volumeCredits
+            result += Math.floor(perf.audience / 5);
+        return result
     }
 
     function playFor(aPerformance) {
