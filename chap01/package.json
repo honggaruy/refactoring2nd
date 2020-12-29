@@ -12,7 +12,8 @@
     "mocha": "*"
   },
   "scripts": {
-    "main": "node ./src/statement.js",
+    "main": "node ./src/main.js",
+    "server": "node ./src/server.js",
     "test": "node ./node_modules/mocha/bin/mocha"
   },
   "keywords": [],
